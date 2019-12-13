@@ -19,7 +19,7 @@ ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
 PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${git_branch}${venv_prompt}${kube_prompt}
 ╰─%B${user_symbol}%b "
-RPROMPT="%B${return_code}%b"
+RPROMPT='%B${return_code}%b  %{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}]'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
