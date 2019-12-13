@@ -17,9 +17,12 @@ local kube_prompt='$(kube_ps1)'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${git_branch}${venv_prompt}${kube_prompt}
-╰─%B${user_symbol}%b "
-RPROMPT='%B${return_code}%b  %{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}]'
+_newline=$'\n'
+_lineup=$'\e[1A'
+_linedown=$'\e[1B'
+
+PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${git_branch}${venv_prompt}${kube_prompt}${_newline}╰─%B${user_symbol}%b "
+RPROMPT='%{${_lineup}%}%B${return_code}%b  %{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}]%{${_linedown}%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
